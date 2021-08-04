@@ -2,11 +2,17 @@
 
 Hi Caper.ai Team Member! I wanted to create a mini-project to show my interest in joining Caper.ai. I built a tiny OpenCV program that tracks when an item is inserted into a cart. Doing this gave me a feeling for what technical challenges making the Caper Cart might involve.
 
-My code is in the cart.py file. I used Python 3 and OpenCV 4.5.3. Please let me know if you hit any issues running it.
+My code is in the cart.py file. I used Python 3 and OpenCV 4.5.3. You'll also need the following files placed in a directory /yolo-coco.
+
+https://github.com/pjreddie/darknet/blob/master/cfg/yolov3.cfg
+https://github.com/pjreddie/darknet/blob/master/data/coco.names
+https://pjreddie.com/media/files/yolov3.weights
+
+Please let me know if you hit any issues running it. 
 
 A general overview of how my code works is given below -
 
-I used pretrained YOLO object detection which was trained on the COCO dataset. It then detects a human based on webcam images. I chose a bottle as a stand in for a generic grocery item, since it's easier for you to test on your computer. If an object is detected, but then loses detection for 4 frames, the test for whether an object was inserted into the cart is applied. If the last known vertical location is lower than the median vertical location of that object, it's assumed that the object is inserted.
+I used pretrained YOLO object detection which was trained on the COCO dataset. It then detects a plastic water bottle based on webcam images. I chose a bottle as a stand in for a generic grocery item, since it's easier for you to test on your computer. If an object is detected, but then loses detection for 4 frames, the test for whether an object was inserted into the cart is applied. If the last known vertical location is lower than the median vertical location of that object, it's assumed that the object is inserted.
 
 I've also added barcode detection to the code. My thinking behind this was that the chances of detecting a barcode was fairly low, but highly accurate. If a barcode is detected, that's a very good identifier for the product being added to the cart. My code currently detects the barcode, then applies the perspective transform so that the barcode appears clearly. It would be trivial to then apply a barcode reading library, however my Macbook was unable to install it. 
 
@@ -26,6 +32,6 @@ TESTING INSTRUCTIONS
 
 $ python3 cart.py
 
-In case it doesn't run, I have also included the output from a test run of the code. Please note that due to age, my computer ran this very slowly, which is why my sample output is choppy.
+In case it doesn't run, I have also included the output from a test run of the code. output.avi is the bounding box and notification that an item was inserted to cart, while the warped.jpg is the warped barcode image. Please note that due to age, my computer ran this very slowly, which is why my sample output is choppy.
 
 Thank you for reading!
