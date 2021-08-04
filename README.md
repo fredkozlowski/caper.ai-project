@@ -5,7 +5,9 @@ Hi Caper.ai Team Member! I wanted to create a mini-project to show my interest i
 My code is in the cart.py file. I used Python 3 and OpenCV 4.5.3. You'll also need the following files placed in a directory /yolo-coco.
 
 https://github.com/pjreddie/darknet/blob/master/cfg/yolov3.cfg
+
 https://github.com/pjreddie/darknet/blob/master/data/coco.names
+
 https://pjreddie.com/media/files/yolov3.weights
 
 Please let me know if you hit any issues running it. 
